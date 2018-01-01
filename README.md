@@ -14,19 +14,19 @@ $ git clone git@github.com:schnoberts1/zappa.git && cd zappa && docker build -t 
 ## Build a customized image with extra build deps
 ```
 # Add extra installs to the Dockerfile.update file, then run:
-$ docker build --build-arg version=< zappa version > -t danielwhatmuff/zappa:< zappa version > -f Dockerfile.update .
+$ docker build --build-arg version=< zappa version > -t schnoberts1/zappa:< zappa version > -f Dockerfile.update .
 # e.g.
-$ docker build --build-arg version=0.38.1 -t danielwhatmuff/zappa:0.38.1 -f Dockerfile.update .
+$ docker build --build-arg version=0.38.1 -t schnoberts1/zappa:0.38.1 -f Dockerfile.update .
 ```
 
 ## Or pull the image from Docker Hub
 ```bash
-$ docker pull danielwhatmuff/zappa
+$ docker pull schnoberts1/zappa
 ```
 
 ## Using exported AWS_DEFAULT_REGION, AWS_SECRET_ACCESS_KEY and AWS_ACCESS_KEY_ID env vars
 ```
-$ alias zappashell='docker run -ti -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION -v $(pwd):/var/task  --rm danielwhatmuff/zappa bash'
+$ alias zappashell='docker run -ti -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID -e AWS_DEFAULT_REGION=$AWS_DEFAULT_REGION -v $(pwd):/var/task  --rm schnoberts1/zappa bash'
 $ alias >> ~/.bash_profile
 $ cd yourzappaproject
 $ zappashell
@@ -56,7 +56,7 @@ $ export AWS_PROFILE=myprofile
 ```
 * Mount the code and config into the container
 ```
-$ alias zappashell='docker run -ti -e AWS_PROFILE=$AWS_PROFILE -v $(pwd):/var/task -v ~/.aws/:/root/.aws  --rm danielwhatmuff/zappa bash'
+$ alias zappashell='docker run -ti -e AWS_PROFILE=$AWS_PROFILE -v $(pwd):/var/task -v ~/.aws/:/root/.aws  --rm schnoberts1/zappa bash'
 zappashell> source yourvirtualenv/bin/activate
 zappashell> pip install -r requirements.txt
 zappashell> zappa deploy
