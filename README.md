@@ -8,7 +8,7 @@ Docker image for [Zappa](https://github.com/Miserlou/Zappa), based on the [Lambd
 
 ## Build the image
 ```bash
-$ git clone git@github.com:danielwhatmuff/zappa.git && cd zappa && docker build -t danielwhatmuff/zappa .
+$ git clone git@github.com:schnoberts1/zappa.git && cd zappa && docker build -t schnoberts1/zappa .
 ```
 
 ## Build a customized image with extra build deps
